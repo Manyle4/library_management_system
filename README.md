@@ -4,34 +4,34 @@ A terminal based library management system to practice OOP and creating classes 
 # Structure
 This program uses 3 main classes: Book, User and Library
 
-## Book
-Attributes:
-title
-author
-isbn
-available (True/False)
-Methods:
-mark_borrowed()
-mark_returned()
+### Book
+#### Attributes:
+1. title
+2. author
+3. isbn
+4. available (True/False)
+#### Methods:
+1. mark_borrowed()
+2. mark_returned()
 
-## User
-Attributes:
-name
-user_id
-borrowed_books (list)
-Methods:
-borrow_book(book)
-return_book(book)
+### User
+#### Attributes:
+1. name
+2. user_id
+3. borrowed_books (list)
+#### Methods:
+1. borrow_book(book)
+2. return_book(book)
 
-## Library
-Attributes:
-books (list of Book objects)
-users (list of User objects)
-Methods:
-add_book()
-remove_book()
-list_books()
-borrow_book(user_id, book_id)
-return_book(user_id, book_id)
-save_to_file()
-load_from_file()
+### Library
+#### Attributes:
+1. books (list of Book objects)
+2. users (list of User objects)
+#### Methods:
+1. add_book()
+2. remove_book()
+3. list_books()
+4. borrow_book(user_id, book_id)
+5. return_book(user_id, book_id)
+6. save_to_file()
+7. load_from_file()
