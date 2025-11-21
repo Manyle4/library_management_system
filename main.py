@@ -1,42 +1,20 @@
-class Book:
-    def __init__(self, title, author, isbn, isAvailable):
-        self.title = title
-        self.author = author
-        self.isbn = isbn
-        self.isAvailable = isAvailable
-        
-    def mark_borrowed(self):
-        pass
-    def mark_returned(self):
-        pass
+import json
+
+#Librarians Options
+def librarian_roles():
+    print("Here are your options:\n1. Add a book\n2. Remove a book\n3. Check all the books\n4. Permit book borrowing\n5. Permit book returning")
+    choice = input("What would you like to do first?: ")
     
-class User:
-    def __init__(self, name, user_id, borrowed_books):
-        self.name = name
-        self.user_id = user_id
-        self.borrowed_books = borrowed_books
-        
-    def borrow_book(self,book):
-        pass
-    def return_book(self,book):
-        pass
-    
-class Library:
-    def __init__(self, books, users):
-        self.books = books
-        self.users = users
-        
-    def add_books(self):
-        pass
-    def remove_books(self):
-        pass
-    def list_books(self):
-        pass
-    def borrow_book(self, user_id, book_id):
-        pass
-    def return_book(self, user_id, book_id):
-        pass
-    def save_to_file(self):
-        pass
-    def load_from_file(self):
-        pass
+#Users Options
+def user_roles():
+    print("Here are your options:\n1. Borrow a book\n2. Return a book")
+    choice = input("What would you like to do first?: ")
+
+print("Welcome to your library system!")
+
+role = input("Are you a librarian (1) or a user(2)?: ")
+
+if role == "1":
+    librarian_roles()
+elif role == "2":
+    user_roles()
