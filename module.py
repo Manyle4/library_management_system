@@ -9,6 +9,8 @@ class Book:
         pass
     def mark_returned(self):
         pass
+    def to_json(self):
+        return {"title": self.title, "author": self.author, "isbn": self.isbn, "availability": self.isAvailable}
     
 class User:
     def __init__(self, name, user_id, borrowed_books):
