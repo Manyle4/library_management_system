@@ -33,5 +33,3 @@ This program uses 3 main classes: Book, User and Library
 3. list_books()
 4. borrow_book(user_id, book_id)
 5. return_book(user_id, book_id)
-6. save_to_file()
-7. load_from_file()
