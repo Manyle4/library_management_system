@@ -22,6 +22,8 @@ class User:
         pass
     def return_book(self,book):
         pass
+    def to_json(self):
+        return {"name": self.name, "user_id": self.user_id, "borrowed_books": self.borrowed_books}
     
 class Library:
     def __init__(self, books, users):
