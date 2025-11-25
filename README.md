@@ -24,6 +24,7 @@ This program uses 3 main classes: Book, User and Library
 2. return_book(book)
 
 ### Library
+# The librarian's code is asobiolivia_hanako_kasumichaos
 #### Attributes:
 1. books (list of Book objects)
 2. users (list of User objects)

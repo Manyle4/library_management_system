@@ -8,31 +8,41 @@ import random
 
 #Librarians Options
 def librarian_roles():
-    print("Here are your options:\n1. Add a book\n2. Remove a book\n3. Check all the books\n4. Permit book borrowing\n5. Permit book returning")
-    choice = input("What would you like to do first?: ")
-    
-    if choice == "1":
-        library.add_a_book()
-    elif choice == "2":
-        library.remove_a_book()
-    elif choice == "3":
-        library.list_books()
-    
+    password = input("If you are really the librarian what is the password? (The password is in the READMe file): ")
+    if password == "asobiolivia_hanako_kasumichaos":
+        print("Here are your options:\n1. Add a book\n2. Remove a book\n3. Check all the books\n4. Permit book borrowing\n5. Permit book returning")
+        choice = input("What would you like to do first?: ")
+        
+        if choice == "1":
+            library.add_a_book()
+        elif choice == "2":
+            library.remove_a_book()
+        elif choice == "3":
+            library.list_books()
+    else:
+        print("You are not the librarian")
+        new_decision = input("Would you like to check the library as a patron? (y/n): ").lower()
+        if new_decision == "y":
+            authenticate_user()
+        else:
+            print("Bye-bye")
     
 # #Users Options
 def user_roles():
     print("Here are your options:\n1. Borrow a book\n2. Return a book")
     choice = input("What would you like to do first?: ")
     
-    # if choice == "1":
-    #     borrow_a_book()
-    # elif choice == "2":
-    #     return_a_book()
+    if choice == "1":
+        borrow_a_book()
+    elif choice == "2":
+        # return_a_book()
+        pass
         
-# def borrow_a_book():
-#     books = check_all_books()
-#     book_choice = int(input("Which book would you like to borrow?: "))
-#     book = books[book_choice-1]  
+def borrow_a_book():
+    books = library.list_books()
+    book_choice = int(input("Which book would you like to borrow?: "))
+    book = books[book_choice-1]  
+    book.availability = False
         
 
 # def return_a_book():
@@ -67,12 +77,15 @@ def authenticate_user():
                 sign_up()
         
 ###############################################################Beginning of program
-print("Welcome to your library system!")
-library = module.Library()
-role = input("Are you a librarian (1) or a user(2)?: ")
+if __name__ == "__main__":
+    print("Welcome to your library system!")
+    library = module.Library()
+    # role = input("Are you a librarian (1) or a user(2)?: ")
 
-if role == "1":
-    librarian_roles()
-    pass
-elif role == "2":
-    authenticate_user()
+    # if role == "1":
+    #     librarian_roles()
+    #     pass
+    # elif role == "2":
+    #     authenticate_user()
+    
+    user_roles()
